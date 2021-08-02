@@ -32,6 +32,6 @@ export const isGameOver = (boardState, currPlayer) => {
 }
 
 export const getGameResult = (boardState, currPlayer) => {
-  if (didWin) return currPlayer
-  else return 0
+  if (didWin(boardState, currPlayer)) return currPlayer
+  return 0
 }
