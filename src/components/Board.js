@@ -5,8 +5,8 @@ function Board({ board }) {
   return (
     <div className="Board">
       {
-        board.map((tileRow) => {
-          return <TileRow value={tileRow} />
+        board.map((tileRow, i) => {
+          return <TileRow key={i} value={tileRow} />
         })
       }
     </div>

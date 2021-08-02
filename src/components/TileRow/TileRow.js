@@ -6,8 +6,8 @@ function TileRow({ value: tiles }) {
   return (
     <div className="tileRow">
       {
-        tiles.map((tile) => {
-          return <Tile value={tile} />
+        tiles.map((tile, i) => {
+          return <Tile key={i} value={tile} />
         })
       }
     </div>

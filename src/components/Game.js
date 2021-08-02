@@ -6,7 +6,7 @@ import ScoreBoard from './ScoreBoard'
 import CurrentPlayer from './CurrentPlayer'
 import RestartButton from './RestartButton'
 
-const initialBoardState = [[[''],[''],['']],[[''],[''],['']],[[''],[''],['']]]
+const initialBoardState = [['','',''],['','',''],['','','']]
 
 function Game() {
   const [board, setBoard] = useState(initialBoardState)
@@ -17,7 +17,7 @@ function Game() {
     if (isGameOver(boardState, currPlayer)) {
       const winner = getGameResult(boardState)
       if (winner) {
-        const newScore = { ...score, [winner]: score.winner++ }
+        const newScore = { ...score, [winner]: score[winner] + 1 }
         setScore(newScore)
         setCurrPlayer(winner)
       }

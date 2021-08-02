@@ -1,5 +1,20 @@
+.tileContainer {
+  display: flex;
+}
+
+.tileSvg {
+  display: flex;
+  height: 50px;
+  pointer-events: none;
+}
+
 .tile {
   display: flex;
   height: 50px;
+  width: 50px;
+  margin: 5px;
+  border: 3px solid black;
+  border-radius: 10px;
+  background-color: #c9f9fc;
   pointer-events: none;
 }
