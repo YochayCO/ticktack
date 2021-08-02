@@ -7,7 +7,9 @@ function Tile({ value }) {
 
   return (
     <div className="tile">
-      <img src={X} className="tile" alt="tile" />
+      {
+        value === '' ? <div className="tile" /> : <img src={X} className="tile" alt="tile" />
+      }
     </div>
   );
 }

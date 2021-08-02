@@ -1,14 +1,11 @@
-import { useState } from 'react'
-
 import TileRow from './TileRow'
 
-function Board() {
-  const [tileSets] = useState([[['X'],['X'],['X']],[['X'],['X'],['X']],[['X'],['X'],['X']]])
+function Board({ board }) {
 
   return (
     <div className="Board">
       {
-        tileSets.map((tileRow) => {
+        board.map((tileRow) => {
           return <TileRow value={tileRow} />
         })
       }
