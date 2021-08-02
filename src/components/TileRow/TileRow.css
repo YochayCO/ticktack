@@ -1,0 +1,4 @@
+.tileRow {
+  display: flex;
+  flex-direction: row;
+}

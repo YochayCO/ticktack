@@ -1,0 +1,5 @@
+.tile {
+  display: flex;
+  height: 50px;
+  pointer-events: none;
+}
