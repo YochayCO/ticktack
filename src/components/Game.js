@@ -24,6 +24,8 @@ function Game() {
       setBoard(initialBoardState)
       return
     }
+    
+    setBoard(boardState)
     setCurrPlayer(otherPlayer(currPlayer))
   }
 
