@@ -4,7 +4,7 @@ import { otherPlayer, isGameOver, getGameResult } from '../utils/game'
 import Board from './Board'
 import ScoreBoard from './ScoreBoard'
 import CurrentPlayer from './CurrentPlayer'
-import RestartButton from './RestartButton'
+import { Button } from '@material-ui/core'
 
 const initialBoardState = [['','',''],['','',''],['','','']]
 
@@ -15,7 +15,7 @@ function Game() {
 
   const onBoardChange = (boardState) => {
     if (isGameOver(boardState, currPlayer)) {
-      const winner = getGameResult(boardState)
+      const winner = getGameResult(boardState, currPlayer)
       if (winner) {
         const newScore = { ...score, [winner]: score[winner] + 1 }
         setScore(newScore)
@@ -24,7 +24,7 @@ function Game() {
       setBoard(initialBoardState)
       return
     }
-    
+
     setBoard(boardState)
     setCurrPlayer(otherPlayer(currPlayer))
   }
@@ -36,10 +36,10 @@ function Game() {
 
   return (
     <div className="Game">
-      <CurrentPlayer />
+      <CurrentPlayer currPlayer={currPlayer} />
       <Board board={board} currPlayer={currPlayer} onChange={onBoardChange} />
       <ScoreBoard score={score} />
-      <RestartButton onClick={restartBoard} />
+      <Button onClick={restartBoard}>Restart</Button>
     </div>
   );
 }
